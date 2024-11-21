@@ -137,7 +137,7 @@ app.get('/statistics', async (req, res) => {
       res.status(200).json({
         message: 'Statistics fetched successfully',
         data: {
-          totalSaleAmount: totalSaleAmount[0]?.totalAmount || 0, // Fallback to 0 if no sold items
+          totalSaleAmount: totalSaleAmount[0]?.totalAmount || 0, // setting to 0 if no sold items
           totalSoldItems,
           totalNotSoldItems,
         },
@@ -221,7 +221,7 @@ app.get('/pie-chart', async (req, res) => {
       }
         const query = { $expr: { $eq: [{ $month: '$dateOfSale' }, monthIndex + 1] } };
   
-      // Using aggregation pipeline to group by category and count items in each category
+      //I am  using aggregation pipeline to group by category and count items in each category
       const categoryCounts = await Product.aggregate([
         { $match: query }, 
         { $group: { _id: '$category', count: { $sum: 1 } } }, 
