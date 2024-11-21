@@ -1,0 +1,14 @@
+**** For listing all transactions****
+pass this url  http://localhost:5000/transactions?month=January&page=2&perPage=5
+with search 
+http://localhost:5000/transactions?month=March&search=backpack&page=1&perPage=10
+If search will will return all the records of that page number
+
+**** For Testing API for statistics****
+url- http://localhost:5000/statistics?month=January
+
+**** For Testing API for bar chart****
+-> http://localhost:5000/bar-chart?month=December
+
+**** For API which fetches the data from all the 3 APIs as single JSON object ****
+-> http://localhost:5000/combined-data?month=January&page=1&perPage=10
